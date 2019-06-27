@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Calculator-Js</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width", initial-scale="1.0">
+	<style type="text/css">
+		.body{
+			width: 40%;
+			height: 400px;
+			border: 3px solid #d3d3d3;
+		}		
+
+		.btn{
+			width: 50px;
+		}
+	</style>
+</head>
+<body>
+	<div class="body">
+		<h1>Javascript căn bản</h1>
+		<h2>Máy tính đơn giản</h2>
+		<label>Số thứ 1: </label>
+		<input id="num1"/>
+		<!--nút bấm-->
+		<input type="button" class="btn" onclick="calc('+')" value="+">
+		<input type="button" class="btn" onclick="calc('-')" value="-">
+		<br>
+
+		<label>Số thứ 2: </label>
+		<input id="num2"/>
+		<!--nút bấm-->
+		<input type="button" class="btn" onclick="calc('*')" value="*">
+		<input type="button"  class="btn" onclick="calc('/')" value="/">
+		<br>
+		<label>Kết quả : </label>
+		<input id="rs" readonly>
+
+	</div>
+	<script>
+            function calc(opt) {
+                //1 . lấy được giá trị từ ô num1 và ô num2
+                // --- sử dung: document.getElementById('');
+                var num1Ele = document.getElementById('num1');
+                var num1 = parseFloat(num1Ele.value);
+                
+                var num2Ele = document.getElementById('num2');
+                var num2 = parseFloat(num2Ele.value);
+                
+                //2 . Tính kết quả
+                var kq = 0;
+                switch(opt) {
+                    case '+': 
+                        kq = num1 + num2;
+                        break;
+                    case '-': 
+                        kq = num1 - num2;
+                        break;
+                    case '*': 
+                        kq = num1 * num2;
+                        break;
+                    case '/': 
+                        kq = num1 / num2;
+                        break;        
+                }
+                
+                //3 . Hiển thị kết quả.
+                var rsEle = document.getElementById('rs');
+                rsEle.value = kq;
+            }
+        </script>
+
+</body>
