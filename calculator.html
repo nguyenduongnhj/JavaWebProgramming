@@ -5,9 +5,28 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width", initial-scale="1.0">
 	<style type="text/css">
+        <!--start-->
+        a{
+        Position:relative;
+        Overflow:hidden;
+    }
+    a:before {
+         Content: '';
+        Width: 0;
+         Position: absolute;
+        Height 2px;
+        Bottom: -3px:
+    }
+    a:hover {
+        text-decoration:none;
+    }
+    a: hover::before {
+        Width:100%;
+    }
+    <!--end-->
 		.body{
 			width: 40%;
-			height: 400px;
+			height: 500px;
 			border: 3px solid #d3d3d3;
 		}		
 
@@ -37,37 +56,47 @@
 		<input id="rs" readonly>
 
 	</div>
+
+    <a href="google.com">google</a>
+    <a href="google.com">google</a>
+    <a href="google.com">google</a>
+    <a href="google.com">google</a>
+    <a href="google.com">google</a>
+    <a href="google.com">google</a>
+
+
+
 	<script>
-            function calc(opt) {
-                //1 . lấy được giá trị từ ô num1 và ô num2
-                // --- sử dung: document.getElementById('');
-                var num1Ele = document.getElementById('num1');
-                var num1 = parseFloat(num1Ele.value);
-                
-                var num2Ele = document.getElementById('num2');
-                var num2 = parseFloat(num2Ele.value);
-                
-                //2 . Tính kết quả
-                var kq = 0;
-                switch(opt) {
-                    case '+': 
-                        kq = num1 + num2;
-                        break;
-                    case '-': 
-                        kq = num1 - num2;
-                        break;
-                    case '*': 
-                        kq = num1 * num2;
-                        break;
-                    case '/': 
-                        kq = num1 / num2;
-                        break;        
-                }
-                
-                //3 . Hiển thị kết quả.
-                var rsEle = document.getElementById('rs');
-                rsEle.value = kq;
-            }
-        </script>
+		function calc(opt) {
+			var eleNum1 = document.getElementById('num1');
+			var num1 = paseFloat(eleNum1.value);
+
+			var eleNum2 = document.getElementById('num2');
+			var num2 = paseFloat(eleNum2.value);
+
+			var kq = 0;
+			switch(opt){
+				case '+':
+					kq = num1 + num2;
+					break;
+				
+				case '-':
+					kq = num1 - num2;
+					break;
+
+				case '*':
+					kq = num1 * num2;
+					break;
+
+				case '/':
+					kq = num1 / num2;
+					break;
+
+			}
+			var rsEle = document.getElementById('rs');
+			rsEle.value = kq;
+		}
+	</script>
 
 </body>
+</html>
